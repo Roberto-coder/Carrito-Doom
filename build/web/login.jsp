@@ -20,7 +20,7 @@
                     <form>
                         <div class="form-group">
                             <label>Usuario:</label>
-                            <input type="text" class="form-control" name="user" placeholder="Ingresa tu usuario">
+                            <input type="text" class="form-control" name="usuario" placeholder="Ingresa tu usuario">
                         </div>
                         <div class="form-group">
                             <label>Contraseña:</label>
@@ -33,7 +33,7 @@
     </body>
     <%
         if( request.getParameter("login")!=null ){
-            String user=request.getParameter("user");
+            String user=request.getParameter("usuario");
             String password=request.getParameter("password");
             HttpSession sesion=request.getSession();
             if(user.equals("admin") && password.equals("admin")){
@@ -42,7 +42,7 @@
                 response.sendRedirect("index.jsp");
             }
             else{
-                out.print("Humano te quivocaste usuario o contraseña invalidos");
+                out.print("Ingresaste el usuario o contraseña incorrectamente");
             }
         }
     %>
